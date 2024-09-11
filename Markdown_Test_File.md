@@ -66,6 +66,99 @@ For example, if we want to express $a + b = c$ where $a = 8, b = 4, c = 12$ we m
 
 ## Mathjak
 
+
+## Sample dari ZK Inner 
+- https://github.com/RareSkills/zk-book/blob/prod/content/zk-inner-product/en/zk-inner-product.md
+
+## Polynomials with vectors as coefficients
+The following are two polynomials with vector coefficients:
+
+$$
+\begin{align*}
+\mathbf{l}(x) &= \begin{bmatrix} 1 \\ 2 \end {bmatrix} x + \begin{bmatrix} 3 \\ 4 \end{bmatrix} \\
+\mathbf{r}(x) &= \begin{bmatrix} 2 \\ 3 \end{bmatrix} x +\begin{bmatrix} 7 \\ 2 \end{bmatrix}
+\end{align*}
+$$
+
+Evaluating a vector polynomial produces another vector. For example, $\mathbf{l}(2)$ produces
+
+$$
+\mathbf{l}(2) = \begin{bmatrix} 1 \\ 2 \end{bmatrix} (2) + \begin{bmatrix} 3 \\ 4 \end{bmatrix} = \begin{bmatrix} 5 \\ 8 \end{bmatrix}
+$$
+
+
+and evaluating $\mathbf{r}$ at 2 returns:
+
+$$
+\mathbf{r}(2) = \begin{bmatrix} 2 \\ 3 \end{bmatrix} (2) + \begin{bmatrix} 7 \\ 2 \end{bmatrix} = \begin{bmatrix} 11 \\ 8 \end{bmatrix}
+$$
+
+## Multiplying vector polynomials
+Vector polynomials can be multiplied together like scalar polynomials. For example, multiplying $\mathbf{l}(x)$ and $\mathbf{r}(x)$ yields:
+
+$$
+\mathbf{l}(x)\mathbf{r}(x) = 
+(\begin{bmatrix}
+1\\2
+\end{bmatrix}x+
+\begin{bmatrix}
+3\\4
+\end{bmatrix})(
+\begin{bmatrix}
+2 \\ 3
+\end{bmatrix}x + 
+\begin{bmatrix}
+7\\2
+\end{bmatrix}
+)=$$
+$$
+=\begin{bmatrix}
+2\\6
+\end{bmatrix}x^2+
+\begin{bmatrix}
+7\\4
+\end{bmatrix}x+
+\begin{bmatrix}
+6\\12
+\end{bmatrix}x+
+\begin{bmatrix}
+21\\8
+\end{bmatrix}$$
+$$=
+\begin{bmatrix}
+2\\6
+\end{bmatrix}x^2+
+\begin{bmatrix}
+13\\16
+\end{bmatrix}x+
+\begin{bmatrix}
+21\\8
+\end{bmatrix}
+$$
+
+When we multiply each of the vectors together, we take the Hadamard product (element-wise product, denoted with $\circ$).
+
+Note that if we plug $x = 2$ into the resulting vector polynomial, we get the following:
+
+$$
+\begin{bmatrix}
+2\\6
+\end{bmatrix}(2)^2+
+\begin{bmatrix}
+13\\16
+\end{bmatrix}(2)+
+\begin{bmatrix}
+21\\8
+\end{bmatrix}=
+\begin{bmatrix}
+55\\64
+\end{bmatrix}
+$$
+
+This is the same as if we compute:
+
+$\mathbf{l}(2)\circ\mathbf{r}(2) = \begin{bmatrix}5\\8\end{bmatrix}\circ\begin{bmatrix}11\\8\end{bmatrix}=\begin{bmatrix}55\\64\end{bmatrix}$
+
 - Source MD : https://github.com/RareSkills/zk-book/blob/prod/content/r1cs-zkp/en/r1cs-zkp.md
 
 ### Verification step
